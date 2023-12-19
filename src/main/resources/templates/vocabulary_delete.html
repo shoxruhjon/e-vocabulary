@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en"
+    xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <title>Delete Vocabulary Page</title>
+</head>
+<body>
+<section th:replace="fragments :: navbar"></section>
+
+<div class="container">
+    <form action="" method="post">
+        <input type="hidden" name="_csrf" th:value="${_csrf.getToken()}">
+        <p th:text="${'Are you sure delete ' + vocabulary.word}"></p>
+        <input type="submit" class="btn btn-danger" value="Yes">
+        <a href="/vocabulary/home">Back</a>
+    </form>
+
+</div>
+
+<section th:replace="fragments :: js_links">
+</body>
+</html>
